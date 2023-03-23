@@ -1,0 +1,24 @@
+body {
+    box-sizing: border-box;
+    padding: 20px;
+    background: linear-gradient(to bottom, skyblue, rgb(184, 236, 227));
+    background-repeat : no-repeat;
+    background-size : cover; 
+}
+.layout {
+    margin: auto;
+    background: rgb(239, 234, 159);
+    padding: 20px;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.title {
+    font-family: '';
+    font-weight: bold;
+    text-align: center;
+}
+html {
+    height: 100vh;
+   }
