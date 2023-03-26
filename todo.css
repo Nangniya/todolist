@@ -38,15 +38,14 @@ body {
     width: 250px;
     height: 30px;
     font-size: 25px;
-    border: solid 3px mediumaquamarine;
+    border: solid 3px rgb(184, 236, 227);
     outline: none;
 }
-
 
 .submit {
     height: 35px;
     border: none;
     outline: none;
-    background-color: mediumaquamarine;
+    background-color: rgb(184, 236, 227);
     font-weight: bold;
 }
