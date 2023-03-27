@@ -15,6 +15,7 @@ body {
     width: 400px;
     height: 600px;
     border-radius: 10px;
+    border: dotted 5px lightpink;
 }
 
 .title {
@@ -56,17 +57,33 @@ body {
 }
 
 .list-content {
-    background-color: white;
-    margin: 40px;
     font-size: 20px;
     border-radius: 5px;
-}
-
-ul {
     list-style-type: none;
-    padding: 20px;
-  }
-
+}
 li {
     margin-bottom: 10px;
+}
+.todolist{
+    background-color: white;
+    margin: 40px;
+    padding: 20px 0;
+    position: relative;
+    border-radius: 5px;
+    border: solid 3px rgb(184, 236, 227);
+}
+.clear{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(184, 236, 227);
+    font-weight: bold;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+}
+.clear:hover {
+    background-color: skyblue;
 }
