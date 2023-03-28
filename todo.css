@@ -63,6 +63,8 @@ body {
 }
 li {
     margin-bottom: 10px;
+    border-bottom: solid 1px rgb(207, 206, 206);
+    width: 235px;
 }
 .todolist{
     background-color: white;
