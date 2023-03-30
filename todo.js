@@ -1,7 +1,12 @@
 document.querySelector('.submit').addEventListener('click', addToDo);
 document.querySelector('.clear').addEventListener('click', clearAll);
+document.querySelector('ul').addEventListener('click', deleteOrCheck);
 
-
+function deleteOrCheck(e){ //개별 삭제 or 체크
+    if (e.target.tagName === 'IMG') {
+        deleteList(e);
+      }
+}
 
 function addToDo(e){ //할 일 추가
     e.preventDefault();
@@ -14,12 +19,8 @@ function addToDo(e){ //할 일 추가
 function addTask(value){
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-    let img = document.createElement('img');
-    img.src = './delete-icon.png';
-    img.alt = 'x';
-    img.addEventListener('click', deleteList);
-    li.appendChild(img);
-    li.appendChild(document.createTextNode(value));
+    li.innerHTML = 
+    `<img src="./delete-icon.png" alt = "x"><label>${value}</label><input type="checkbox" class = "check">`;
     ul.appendChild(li);
 }
 
