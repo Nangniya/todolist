@@ -8,7 +8,7 @@ function addToDo(e){ //할 일 추가
     let toDoValue = document.querySelector('input').value;
     if(toDoValue !== ''){
         addTask(toDoValue);
-        toDoValue = ''; //입력창 초기화
+        document.querySelector('input').value = ''; //입력창 초기화
     }
 }
 function addTask(value){
@@ -27,7 +27,7 @@ function clearAll(){ //모두 삭제
     document.querySelector('ul').innerHTML = '';
 }
 
-function deleteList(e){
+function deleteList(e){ //개별 삭제
     let targetLi = e.target.parentNode;
     let liParent = targetLi.parentNode;
     liParent.removeChild(targetLi);
