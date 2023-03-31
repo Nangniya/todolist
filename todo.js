@@ -37,7 +37,7 @@ function deleteList(e) { //개별 삭제
     liParent.removeChild(targetLi);
 }
 
-function checkToggle(e) {
+function checkToggle(e) { //체크 toggle
     const todo = e.target.previousSibling;
     todo.classList.toggle('cancelLine');
 }
