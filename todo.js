@@ -6,6 +6,9 @@ function deleteOrCheck(e){ //개별 삭제 or 체크
     if (e.target.tagName === 'IMG') {
         deleteList(e);
       }
+    else if (e.target.className === 'check') {
+        checkToggle(e);
+    }
 }
 
 function addToDo(e){ //할 일 추가
@@ -28,8 +31,13 @@ function clearAll(){ //모두 삭제
     document.querySelector('ul').innerHTML = '';
 }
 
-function deleteList(e){ //개별 삭제
+function deleteList(e) { //개별 삭제
     let targetLi = e.target.parentNode;
     let liParent = targetLi.parentNode;
     liParent.removeChild(targetLi);
+}
+
+function checkToggle(e) {
+    const todo = e.target.previousSibling;
+    todo.classList.toggle('cancelLine');
 }

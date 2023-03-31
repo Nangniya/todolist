@@ -94,3 +94,7 @@ img {
     height: 30px;
     margin-right: 5px;
 }
+.cancelLine {
+    text-decoration: line-through;
+    color:rgb(207, 206, 206);
+}
