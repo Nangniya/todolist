@@ -65,6 +65,7 @@ li {
     margin-bottom: 10px;
     border-bottom: solid 1px rgb(207, 206, 206);
     width: 235px;
+    display: flex;
 }
 .todolist{
     background-color: white;
@@ -94,7 +95,21 @@ img {
     height: 30px;
     margin-right: 5px;
 }
-.cancelLine {
+.cancelLine { /*toggle로 체크박스 구현*/
     text-decoration: line-through;
     color:rgb(207, 206, 206);
+}
+
+.trash{
+    margin-left: auto;
+    outline: none;
+    border: none;
+    background-color: rgb(184, 236, 227);
+    border-radius: 5px;
+    padding: 2px 7px;
+    color: grey;
+}
+
+.trash:hover{
+    background-color: skyblue;
 }

@@ -1,15 +1,5 @@
 document.querySelector('.submit').addEventListener('click', addToDo);
 document.querySelector('.clear').addEventListener('click', clearAll);
-document.querySelector('ul').addEventListener('click', deleteOrCheck);
-
-function deleteOrCheck(e){ //개별 삭제 or 체크
-    if (e.target.tagName === 'IMG') {
-        deleteList(e);
-      }
-    else if (e.target.className === 'check') {
-        checkToggle(e);
-    }
-}
 
 function addToDo(e){ //할 일 추가
     e.preventDefault();
@@ -18,12 +8,18 @@ function addToDo(e){ //할 일 추가
         addTask(toDoValue);
         document.querySelector('input').value = ''; //입력창 초기화
     }
+    document.querySelectorAll('.trash').forEach(item => { //삭제 이벤트 부여
+        item.addEventListener('click', deleteList);
+    });
+    document.querySelectorAll('.check').forEach(item => { //체크박스 이벤트 부여
+        item.addEventListener('click', checkToggle);
+    });
 }
 function addTask(value){
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
     li.innerHTML = 
-    `<img src="./delete-icon.png" alt = "x"><label>${value}</label><input type="checkbox" class = "check">`;
+    `<input type="checkbox" id="td" class = "check"><label for="td"><span>${value}</span></label><button class="trash"><i class="fa-solid fa-trash"></i></button>`;
     ul.appendChild(li);
 }
 
@@ -32,12 +28,12 @@ function clearAll(){ //모두 삭제
 }
 
 function deleteList(e) { //개별 삭제
-    let targetLi = e.target.parentNode;
-    let liParent = targetLi.parentNode;
-    liParent.removeChild(targetLi);
+        let targetLi = e.currentTarget.parentNode;
+        let liParent = targetLi.parentNode;
+        liParent.removeChild(targetLi);
 }
 
 function checkToggle(e) { //체크 toggle
-    const todo = e.target.previousSibling;
+    const todo = e.target.nextSibling;
     todo.classList.toggle('cancelLine');
 }
