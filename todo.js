@@ -20,7 +20,7 @@ function addTask(value){
     let li = document.createElement('li');
     li.setAttribute('data-count','0');
     li.innerHTML = 
-    `<input type="checkbox" id="td" class = "check"><label for="td"><span>${value}</span></label><button class="trash"><i class="fa-solid fa-trash"></i></button>`;
+    `<p class="check">🥚</p><label for="td"><span>${value}</span></label><button class="trash"><i class="fa-solid fa-trash"></i></button>`;
     ul.appendChild(li);
 }
 
@@ -36,5 +36,14 @@ function deleteList(e) { //개별 삭제
 
 function checkToggle(e) { //체크 toggle
     const todo = e.target.nextSibling;
+    const li = e.target.parentNode;
+    let count = parseInt(li.getAttribute('data-count'));
     todo.classList.toggle('cancelLine');
-}
+    count += 1;
+    li.setAttribute('data-count', count);
+    if (count % 2 == 1) {
+      e.target.textContent = '🐣';
+    } else {
+      e.target.textContent = '🥚';
+    }
+  }
