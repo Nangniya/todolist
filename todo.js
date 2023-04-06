@@ -25,25 +25,31 @@ function addTask(value){
 }
 
 function clearAll(){ //모두 삭제
-    document.querySelector('ul').innerHTML = '';
+    const result = confirm('모두 삭제하시겠습니까?')
+    if(result){
+        document.querySelector('ul').innerHTML = '';
+    }
 }
 
 function deleteList(e) { //개별 삭제
         let targetLi = e.currentTarget.parentNode;
         let liParent = targetLi.parentNode;
-        liParent.removeChild(targetLi);
+        const result = confirm(`${targetLi.textContent}를 삭제하시겠습니까?`)
+        if(result){
+            liParent.removeChild(targetLi);
+        }
 }
 
 function checkToggle(e) { //체크 toggle
     const todo = e.target.nextSibling;
     const li = e.target.parentNode;
-    let count = parseInt(li.getAttribute('data-count'));
+    let count = parseInt(li.getAttribute('data-count')); //포스트잇
     todo.classList.toggle('cancelLine');
     count += 1;
     li.setAttribute('data-count', count);
     if (count % 2 == 1) {
-      e.target.textContent = '🐣';
+      e.target.textContent = '🐣'; //완료상태
     } else {
-      e.target.textContent = '🥚';
+      e.target.textContent = '🥚'; //미완료상태
     }
   }
