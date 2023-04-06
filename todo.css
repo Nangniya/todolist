@@ -90,11 +90,7 @@ li {
 .clear:hover {
     background-color: skyblue;
 }
-img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-}
+
 .cancelLine { /*toggle로 체크박스 구현*/
     text-decoration: line-through;
     color:rgb(207, 206, 206);
@@ -112,4 +108,8 @@ img {
 
 .trash:hover{
     background-color: skyblue;
+}
+
+.check {
+    margin: 0 5px 0 0;
 }

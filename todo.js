@@ -18,6 +18,7 @@ function addToDo(e){ //할 일 추가
 function addTask(value){
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
+    li.setAttribute('data-count','0');
     li.innerHTML = 
     `<input type="checkbox" id="td" class = "check"><label for="td"><span>${value}</span></label><button class="trash"><i class="fa-solid fa-trash"></i></button>`;
     ul.appendChild(li);
