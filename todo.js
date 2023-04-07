@@ -24,8 +24,11 @@ function addToDo(e){ //할 일 추가
     document.querySelectorAll('.trash').forEach(item => { //삭제 이벤트 부여
         item.addEventListener('click', deleteList);
     });
-    document.querySelectorAll('.check').forEach(item => { //체크박스 이벤트 부여
+    document.querySelectorAll('.check').forEach(item => { //달걀 체크박스 이벤트 부여
         item.addEventListener('click', checkToggle);
+    });
+    document.querySelectorAll('span').forEach(item => { //투두 체크박스 이벤트 부여
+        item.addEventListener('click', checkToggleSpan);
     });
 }
 function saveToLocalStorage() { //로컬스토리지 저장
@@ -39,7 +42,7 @@ function addTask(value){ //리스트 추가
     let li = document.createElement('li');
     li.setAttribute('data-count','0');
     li.innerHTML = 
-    `<p class="check">🥚</p><label for="td"><span>${value}</span></label><button class="trash"><i class="fa-solid fa-trash"></i></button>`;
+    `<p class="check">🥚</p><span>${value}</span><button class="trash"><i class="fa-solid fa-trash"></i></button>`;
     ul.appendChild(li);
 }
 
@@ -64,7 +67,7 @@ function deleteList(e) { //개별 삭제
         }
 }
 
-function checkToggle(e) { //체크 toggle
+function checkToggle(e) { //체크 toggle 달걀
     const todo = e.target.nextSibling;
     const li = e.target.parentNode;
     let count = parseInt(li.getAttribute('data-count')); //포스트잇
@@ -75,5 +78,19 @@ function checkToggle(e) { //체크 toggle
       e.target.textContent = '🐣'; //완료상태
     } else {
       e.target.textContent = '🥚'; //미완료상태
+    }
+  }
+
+  function checkToggleSpan(e) { //체크 toggle 투두
+    const todo = e.target;
+    const li = e.target.parentNode;
+    let count = parseInt(li.getAttribute('data-count')); //포스트잇
+    todo.classList.toggle('cancelLine');
+    count += 1;
+    li.setAttribute('data-count', count);
+    if (count % 2 == 1) {
+      e.target.previousSibling.textContent = '🐣'; //완료상태
+    } else {
+      e.target.previousSibling.textContent = '🥚'; //미완료상태
     }
   }
