@@ -1,4 +1,9 @@
 document.querySelector('.submit').addEventListener('click', addToDo);
+document.querySelector('input').addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      addToDo(e);
+    }
+  });
 document.querySelector('.clear').addEventListener('click', clearAll);
 document.addEventListener('DOMContentLoaded', () => { //로드될 때 로컬스토리지에서 가져오기
     const tasks = JSON.parse(localStorage.getItem('tasks'));
