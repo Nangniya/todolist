@@ -94,3 +94,17 @@ function checkToggle(e) { //체크 toggle 달걀
       e.target.previousSibling.textContent = '🥚'; //미완료상태
     }
   }
+
+  function showDateTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const second = now.getSeconds();
+    const datetime = `${year}년 ${month}월 ${date}일 ${hour}시 ${minute}분 ${second}초`;
+    document.getElementById("datetime").textContent = datetime;
+  }
+  
+  setInterval(showDateTime, 1000); // 1초마다 갱신

@@ -113,3 +113,16 @@ li {
 .check {
     margin: 0 5px 0 0;
 }
+
+#datetime {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: rgb(184, 236, 227);
+    width: 440px;
+    border-radius: 10px;
+    border: lightpink dotted 5px;
+  }
