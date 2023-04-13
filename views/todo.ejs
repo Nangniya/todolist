@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
-    <link rel="stylesheet", href="todo.css">
+    <link rel="stylesheet" href="/todo.css">
     <script src="https://kit.fontawesome.com/f23c42ea18.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="datetime"></div>
     <div class = "layout">
         <h1 class = "title">🦆Today's ToDoList</h1>
-        <form class = "add-todo">
-            <input type="text" class="input">
+        <form action="/add" method="POST" class = "add-todo">
+            <input type="text" class="input" name="task">
             <button type="submit" class="submit">ADD</button>
         </form>
         <div class = "todolist">
