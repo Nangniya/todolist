@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 let db;
-MongoClient.connect('mongodb+srv://apinksky00:eocndtkffo07@cluster0.ucdd5er.mongodb.net/?retryWrites=true&w=majority', function(에러, client){
+MongoClient.connect('mongodb+srv://apinksky00:<password>@cluster0.ucdd5er.mongodb.net/?retryWrites=true&w=majority', function(에러, client){
    if (에러) return console.log(에러)
    db = client.db('mytodo');
    app.listen(8080, function() {
